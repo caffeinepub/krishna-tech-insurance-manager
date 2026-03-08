@@ -1,0 +1,163 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-customer-management-system-with-the-ability-to-add-new-customers-including-fields-for-name-phone-number-and-address",
+      "featureTitle": "Create a customer management system with the ability to add new customers including fields for name, phone number, and address",
+      "files": [
+        "frontend/src/pages/Customers.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-customer-list-view-with-search-and-filter-capabilities",
+      "featureTitle": "Implement customer list view with search and filter capabilities",
+      "files": [
+        "frontend/src/pages/Customers.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-policy-management-system-with-fields-for-policy-number-policy-type-insurance-company-name-customer-assignment-start-date-and-expiry-date",
+      "featureTitle": "Create policy management system with fields for policy number, policy type, insurance company name, customer assignment, start date, and expiry date",
+      "files": [
+        "frontend/src/pages/Policies.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-alerts-and-notifications-system-that-highlights-policies-expiring-soon-insurance-renewal-reminders-and-road-tax-expiry-alerts",
+      "featureTitle": "Create alerts and notifications system that highlights policies expiring soon, insurance renewal reminders, and road tax expiry alerts",
+      "files": [
+        "frontend/src/pages/Alerts.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-dashboard-showing-upcoming-renewals-and-expirations-with-summary-metrics",
+      "featureTitle": "Build dashboard showing upcoming renewals and expirations with summary metrics",
+      "files": [
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-navigation-menu-with-sections-for-dashboard-customers-policies-alerts-help-support-and-legal",
+      "featureTitle": "Implement navigation menu with sections for Dashboard, Customers, Policies, Alerts, Help, Support, and Legal",
+      "files": [
+        "frontend/src/components/layout/Layout.tsx",
+        "frontend/src/pages/Help.tsx",
+        "frontend/src/pages/Legal.tsx",
+        "frontend/src/pages/Support.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-company-branding-throughout-the-application-with-company-name-krishna-tech-and-solutions-tagline-irdai-registered-insurance-partner-insurance-ca-legal-and-contact-information-6290932283-krishnatechandsolutions-gmail-com",
+      "featureTitle": "Apply company branding throughout the application with company name 'KRISHNA TECH AND SOLUTIONS', tagline 'IRDAI Registered Insurance Partner | Insurance | CA | Legal', and contact information '6290932283, krishnatechandsolutions@gmail.com'",
+      "files": [
+        "frontend/src/components/layout/Layout.tsx",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/pages/Support.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-professional-insurance-business-appropriate-interface-with-clear-navigation-data-tables-for-listings-and-visual-alert-indicators-for-expiring-policies",
+      "featureTitle": "Design a professional, insurance-business-appropriate interface with clear navigation, data tables for listings, and visual alert indicators for expiring policies",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

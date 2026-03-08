@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Insurance management application for KRISHNA TECH AND SOLUTIONS - a comprehensive system for managing customers, policies, expiration alerts, document uploads, and PDF generation for an IRDAI registered insurance partner",
+  "architectural_notes": [
+    "Insurance management application with customer and policy tracking",
+    "Multi-entity data model: customers, policies, documents, alerts",
+    "Document upload capability for policy files",
+    "PDF export functionality for reports",
+    "Alert system for policy/tax expiration tracking",
+    "Filter and search capabilities across entities",
+    "Professional UI design suitable for insurance business"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Professional insurance business logo for KRISHNA TECH AND SOLUTIONS with shield or protection symbolism in blue and gold tones (logo.dim_200x200.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-customer-management-system-with-the-ability-to-add-new-customers-including-fields-for-name-phone-number-and-address",
+      "title": "Create a customer management system with the ability to add new customers including fields for name, phone number, and address",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-customer-list-view-with-search-and-filter-capabilities",
+      "title": "Implement customer list view with search and filter capabilities",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-policy-management-system-with-fields-for-policy-number-policy-type-insurance-company-name-customer-assignment-start-date-and-expiry-date",
+      "title": "Create policy management system with fields for policy number, policy type, insurance company name, customer assignment, start date, and expiry date",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-alerts-and-notifications-system-that-highlights-policies-expiring-soon-insurance-renewal-reminders-and-road-tax-expiry-alerts",
+      "title": "Create alerts and notifications system that highlights policies expiring soon, insurance renewal reminders, and road tax expiry alerts",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-dashboard-showing-upcoming-renewals-and-expirations-with-summary-metrics",
+      "title": "Build dashboard showing upcoming renewals and expirations with summary metrics",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-navigation-menu-with-sections-for-dashboard-customers-policies-alerts-help-support-and-legal",
+      "title": "Implement navigation menu with sections for Dashboard, Customers, Policies, Alerts, Help, Support, and Legal",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-company-branding-throughout-the-application-with-company-name-krishna-tech-and-solutions-tagline-irdai-registered-insurance-partner-insurance-ca-legal-and-contact-information-6290932283-krishnatechandsolutions-gmail-com",
+      "title": "Apply company branding throughout the application with company name 'KRISHNA TECH AND SOLUTIONS', tagline 'IRDAI Registered Insurance Partner | Insurance | CA | Legal', and contact information '6290932283, krishnatechandsolutions@gmail.com'",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-professional-insurance-business-appropriate-interface-with-clear-navigation-data-tables-for-listings-and-visual-alert-indicators-for-expiring-policies",
+      "title": "Design a professional, insurance-business-appropriate interface with clear navigation, data tables for listings, and visual alert indicators for expiring policies",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Customer management system with add, view, search/filter functionality",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Policy management with policy details, document uploads, customer linking, and road tax tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Alerts and notifications system for policy expiration, insurance renewals, and road tax expiry",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Dashboard showing upcoming renewals and expirations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Navigation menu with sections: Dashboard, Customers, Policies, Alerts, Help, Support, Legal",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "PDF generation for customer data and policy details reports",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Professional branding with company name, tagline, and contact information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement policy document upload functionality with file storage",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add road tax expiry date tracking to policy records",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add quick access 'Add Policy' option in navigation and filter policies by insurance company",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Implement PDF generation for customer data reports and policy details reports with export functionality",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "KRISHNA TECH AND SOLUTIONS Insurance Management",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

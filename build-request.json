@@ -1,0 +1,258 @@
+{
+  "kind": "build_request",
+  "title": "Build comprehensive insurance management application for KRISHNA TECH AND SOLUTIONS",
+  "projectName": "Insurance Manager",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a customer management system with the ability to add new customers including fields for name, phone number, and address",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Add new customers with details: name, phone number, address"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form accepts customer name, phone number, and address fields",
+        "Customer data is persisted in backend storage",
+        "Validation ensures required fields are filled before submission"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement customer list view with search and filter capabilities",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "View and manage customer list",
+          "Search/filter customers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All customers are displayed in a data table",
+        "Search functionality filters customers by name, phone, or address",
+        "Filter results update in real-time as user types"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create policy management system with fields for policy number, policy type, insurance company name, customer assignment, start date, and expiry date",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Add new policies with: policy number, policy type, insurance company name, customer assignment, start date, expiry date"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form captures all required policy fields",
+        "Policy can be linked to an existing customer",
+        "Start date and expiry date are validated for logical ordering",
+        "Policy data is persisted in backend storage"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement policy document upload functionality with file storage",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Upload policy documents (file upload)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "File upload interface accepts PDF and common document formats",
+        "Documents are stored and associated with specific policies",
+        "Uploaded documents can be retrieved and viewed"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add road tax expiry date tracking to policy records",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Track road tax expiry dates"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Policy form includes optional road tax expiry date field",
+        "Road tax expiry date is stored with policy data",
+        "Road tax expiry information is displayed in policy details"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create alerts and notifications system that highlights policies expiring soon, insurance renewal reminders, and road tax expiry alerts",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Policy expiration alerts (highlight policies expiring soon)",
+          "Insurance renewal reminders",
+          "Road tax expiry alerts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "System identifies policies expiring within 30 days",
+        "Visual indicators highlight expiring policies in lists and tables",
+        "Separate alerts view shows all upcoming expirations and renewals",
+        "Road tax expiry dates trigger alerts when approaching"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build dashboard showing upcoming renewals and expirations with summary metrics",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dashboard showing upcoming renewals and expirations"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays count of policies expiring in next 7, 30, and 90 days",
+        "List of upcoming renewals sorted by expiry date",
+        "Quick access links to customers and policies needing attention",
+        "Visual indicators for urgent vs upcoming expirations"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Implement navigation menu with sections for Dashboard, Customers, Policies, Alerts, Help, Support, and Legal",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Main menu with sections: Dashboard, Customers, Policies, Alerts, Help, Support, Legal"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation menu is accessible from all pages",
+        "All specified sections are present and functional",
+        "Active section is visually indicated",
+        "Menu is responsive and works on mobile devices"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add quick access 'Add Policy' option in navigation and filter policies by insurance company",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Add Policy option",
+          "Filter policies by company"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Add Policy button or link is prominently accessible in navigation",
+        "Policy list includes filter dropdown for insurance company",
+        "Filter updates policy list to show only selected company's policies"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement PDF generation for customer data reports and policy details reports with export functionality",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Generate PDF reports for customer data",
+          "Generate PDF reports for policy details",
+          "Export customer and policy information"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Customer details can be exported to PDF format",
+        "Policy details can be exported to PDF format",
+        "PDF reports include company branding",
+        "Export buttons are accessible from customer and policy detail views"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Apply company branding throughout the application with company name 'KRISHNA TECH AND SOLUTIONS', tagline 'IRDAI Registered Insurance Partner | Insurance | CA | Legal', and contact information '6290932283, krishnatechandsolutions@gmail.com'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Company name: KRISHNA TECH AND SOLUTIONS",
+          "Tagline: IRDAI Registered Insurance Partner | Insurance | CA | Legal",
+          "Contact: 6290932283, krishnatechandsolutions@gmail.com"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Company name appears in header or navigation bar",
+        "Tagline is displayed prominently on main pages",
+        "Contact information is accessible from Support or Help sections",
+        "Branding is consistent across all pages"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Design a professional, insurance-business-appropriate interface with clear navigation, data tables for listings, and visual alert indicators for expiring policies",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Use a professional design suitable for an insurance business with clear navigation, data tables, and alert indicators"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color scheme and typography convey professionalism and trustworthiness suitable for financial services",
+        "Data tables are clean, readable, and include sorting capabilities",
+        "Alert indicators use color coding (red for urgent, yellow for upcoming)",
+        "Layout is organized with clear visual hierarchy and whitespace"
+      ]
+    }
+  ],
+  "constraints": [
+    "File uploads must be handled through the backend for proper storage",
+    "PDF generation must work on both customer and policy data",
+    "All dates must be validated to prevent invalid date ranges",
+    "Search and filter operations must be performant with large datasets"
+  ],
+  "nonGoals": [
+    "Email or SMS notification delivery to customers",
+    "Payment processing or premium collection",
+    "Integration with external insurance company APIs",
+    "Mobile app development",
+    "Multi-user authentication with role-based access control"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Professional insurance business logo for KRISHNA TECH AND SOLUTIONS with shield or protection symbolism in blue and gold tones (logo.dim_200x200.png)"
+    ],
+    "edits": []
+  }
+}

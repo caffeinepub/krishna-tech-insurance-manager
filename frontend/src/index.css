@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Professional insurance blue palette */
+        --background: 0.98 0 0;
+        --foreground: 0.15 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        
+        /* Primary: Deep professional blue */
+        --primary: 0.35 0.15 250;
+        --primary-foreground: 0.98 0 0;
+        
+        /* Secondary: Light blue-gray */
+        --secondary: 0.92 0.02 250;
+        --secondary-foreground: 0.25 0 0;
+        
+        /* Muted tones */
+        --muted: 0.94 0.01 250;
+        --muted-foreground: 0.45 0.02 250;
+        
+        /* Accent: Gold for trust and premium feel */
+        --accent: 0.75 0.12 85;
+        --accent-foreground: 0.15 0 0;
+        
+        /* Destructive */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        /* Borders and inputs */
+        --border: 0.88 0.02 250;
+        --input: 0.88 0.02 250;
+        --ring: 0.35 0.15 250;
+        
+        /* Insurance-specific colors */
+        --insurance-primary: 0.35 0.15 250;
+        --insurance-accent: 0.75 0.12 85;
+        
+        /* Alert colors */
+        --alert-urgent: 0.55 0.22 25;
+        --alert-warning: 0.70 0.15 65;
+        --alert-upcoming: 0.60 0.15 150;
+        
+        /* Chart colors */
+        --chart-1: 0.60 0.18 250;
+        --chart-2: 0.65 0.15 200;
+        --chart-3: 0.70 0.12 85;
+        --chart-4: 0.55 0.20 150;
+        --chart-5: 0.50 0.18 280;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.95 0 0;
+        --card: 0.15 0 0;
+        --card-foreground: 0.95 0 0;
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.95 0 0;
+        
+        /* Primary: Lighter blue for dark mode */
+        --primary: 0.65 0.18 250;
+        --primary-foreground: 0.12 0 0;
+        
+        /* Secondary */
+        --secondary: 0.22 0.02 250;
+        --secondary-foreground: 0.95 0 0;
+        
+        /* Muted */
+        --muted: 0.20 0.02 250;
+        --muted-foreground: 0.65 0.02 250;
+        
+        /* Accent: Brighter gold for dark mode */
+        --accent: 0.80 0.15 85;
+        --accent-foreground: 0.12 0 0;
+        
+        /* Destructive */
+        --destructive: 0.60 0.25 25;
+        --destructive-foreground: 0.95 0 0;
+        
+        /* Borders and inputs */
+        --border: 0.25 0.02 250;
+        --input: 0.25 0.02 250;
+        --ring: 0.65 0.18 250;
+        
+        /* Insurance-specific colors for dark mode */
+        --insurance-primary: 0.65 0.18 250;
+        --insurance-accent: 0.80 0.15 85;
+        
+        /* Alert colors for dark mode */
+        --alert-urgent: 0.60 0.25 25;
+        --alert-warning: 0.75 0.18 65;
+        --alert-upcoming: 0.65 0.18 150;
+        
+        /* Chart colors */
+        --chart-1: 0.65 0.20 250;
+        --chart-2: 0.70 0.18 200;
+        --chart-3: 0.75 0.15 85;
+        --chart-4: 0.60 0.22 150;
+        --chart-5: 0.55 0.20 280;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold;
+    }
+}
+
+@layer utilities {
+    .text-insurance-primary {
+        color: oklch(var(--insurance-primary));
+    }
+    
+    .text-insurance-accent {
+        color: oklch(var(--insurance-accent));
+    }
+    
+    .bg-insurance-primary {
+        background-color: oklch(var(--insurance-primary));
+    }
+    
+    .bg-insurance-accent {
+        background-color: oklch(var(--insurance-accent));
+    }
+    
+    .border-insurance-primary {
+        border-color: oklch(var(--insurance-primary));
+    }
+    
+    .border-insurance-accent {
+        border-color: oklch(var(--insurance-accent));
+    }
+    
+    .text-alert-urgent {
+        color: oklch(var(--alert-urgent));
+    }
+    
+    .text-alert-warning {
+        color: oklch(var(--alert-warning));
+    }
+    
+    .text-alert-upcoming {
+        color: oklch(var(--alert-upcoming));
+    }
+    
+    .bg-alert-urgent {
+        background-color: oklch(var(--alert-urgent));
+    }
+    
+    .bg-alert-warning {
+        background-color: oklch(var(--alert-warning));
+    }
+    
+    .bg-alert-upcoming {
+        background-color: oklch(var(--alert-upcoming));
+    }
+    
+    .border-alert-urgent {
+        border-color: oklch(var(--alert-urgent));
+    }
+    
+    .border-alert-warning {
+        border-color: oklch(var(--alert-warning));
+    }
+    
+    .border-alert-upcoming {
+        border-color: oklch(var(--alert-upcoming));
+    }
+}

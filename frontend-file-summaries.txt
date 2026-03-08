@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup defining all routes (Dashboard, Customers, Policies, Alerts, Help, Support, Legal) wrapped in the Layout component.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including customer management (list, get, add), policy management (list, get, add), alerts, and upcoming expirations with proper cache invalidation.",
+  "frontend/src/components/layout/Layout.tsx": "Main layout wrapper with responsive header navigation, company branding with logo, mobile menu, and footer with contact information and social links.",
+  "frontend/src/pages/Dashboard.tsx": "Dashboard page displaying company branding, statistics cards for customers and policies, expiration metrics, and upcoming policy renewals list with urgency indicators.",
+  "frontend/src/pages/Customers.tsx": "Customer management page with add customer dialog form, searchable customer table, and view customer policies functionality.",
+  "frontend/src/pages/Policies.tsx": "Policy management page with add policy dialog form including document upload, filterable policy table by insurance company, and expiry status badges with color-coded urgency.",
+  "frontend/src/pages/Alerts.tsx": "Alerts page displaying policy expiration alerts, road tax expiry alerts, and system alerts with color-coded urgency levels (urgent/warning) and time-based filtering.",
+  "frontend/src/pages/Help.tsx": "Help and documentation page with FAQ accordion covering customer management, policy registration, alerts, document uploads, and getting started guide.",
+  "frontend/src/pages/Support.tsx": "Support page displaying contact information (phone, email), business hours, services offered, and company information with IRDAI registration details.",
+  "frontend/src/pages/Legal.tsx": "Legal information page with terms of service, privacy policy, regulatory compliance (IRDAI), and contact information for legal matters.",
+  "frontend/src/index.css": "Global styles with professional insurance-themed OKLCH color system featuring deep blue primary, gold accent, and alert colors (urgent red, warning yellow) for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with insurance-specific colors (primary blue, accent gold, alert colors), professional typography, custom shadows, and Inter font family.",
+  "frontend/src/main.tsx": "Application entry point with QueryClient, InternetIdentityProvider, ThemeProvider, and Sonner toast notifications setup."
+}

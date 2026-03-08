@@ -1,0 +1,317 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Insurance Manager Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create customer management form to add new customers with name, phone, and address",
+      "acceptanceCriteria": [
+        "Form accepts customer name, phone number, and address fields",
+        "Validation ensures required fields are filled before submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/customers/AddCustomerForm.tsx",
+          "operation": "create",
+          "description": "Create form component for adding new customers with fields for name, phone, and address. Include validation for required fields and call backend.addCustomer() method on submission."
+        },
+        {
+          "path": "frontend/src/pages/Customers.tsx",
+          "operation": "create",
+          "description": "Create Customers page that includes the AddCustomerForm component and handles form submission success/error states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement customer list view with search and filter capabilities",
+      "acceptanceCriteria": [
+        "All customers are displayed in a data table",
+        "Search functionality filters customers by name, phone, or address",
+        "Filter results update in real-time as user types"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/customers/CustomerTable.tsx",
+          "operation": "create",
+          "description": "Create data table component to display all customers fetched via backend.listCustomers(). Include real-time search/filter functionality across name, phone, and address fields."
+        },
+        {
+          "path": "frontend/src/pages/Customers.tsx",
+          "operation": "modify",
+          "description": "Integrate CustomerTable component into the Customers page alongside the AddCustomerForm."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create policy management form with all required policy fields and customer assignment",
+      "acceptanceCriteria": [
+        "Form captures all required policy fields",
+        "Policy can be linked to an existing customer",
+        "Start date and expiry date are validated for logical ordering"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/policies/AddPolicyForm.tsx",
+          "operation": "create",
+          "description": "Create form component for adding new policies with fields for policy number, policy type, insurance company name, customer selection dropdown (populated from backend.listCustomers()), start date (validFrom), and expiry date (validTo). Validate that validTo is after validFrom before calling backend.addPolicy()."
+        },
+        {
+          "path": "frontend/src/pages/Policies.tsx",
+          "operation": "create",
+          "description": "Create Policies page that includes the AddPolicyForm component and handles form submission states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement policy document upload functionality using blob-storage component",
+      "acceptanceCriteria": [
+        "File upload interface accepts PDF and common document formats",
+        "Uploaded documents can be retrieved and viewed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/policies/DocumentUpload.tsx",
+          "operation": "create",
+          "description": "Create file upload component that accepts PDF and common document formats. Use the ExternalBlob class from blob-storage component to handle file uploads with progress tracking via withUploadProgress(). Verify the component's usage instructions before implementing. Convert selected files to ExternalBlob instances and pass them to the policy form."
+        },
+        {
+          "path": "frontend/src/components/policies/AddPolicyForm.tsx",
+          "operation": "modify",
+          "description": "Integrate DocumentUpload component into the policy form. Store uploaded ExternalBlob instances in form state and pass them as the documents array parameter when calling backend.addPolicy()."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyDocumentViewer.tsx",
+          "operation": "create",
+          "description": "Create component to display and view policy documents. Use ExternalBlob.getDirectURL() method from blob-storage component to generate viewable URLs for stored documents. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add road tax expiry date tracking field to policy forms and display",
+      "acceptanceCriteria": [
+        "Policy form includes optional road tax expiry date field",
+        "Road tax expiry information is displayed in policy details"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/policies/AddPolicyForm.tsx",
+          "operation": "modify",
+          "description": "Add optional roadTaxExpiry date field to the policy form. Pass the roadTaxExpiry value (converted to Time type) to backend.addPolicy()."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyDetails.tsx",
+          "operation": "create",
+          "description": "Create component to display full policy details including policy number, type, insurance company, dates (validFrom, validTo, roadTaxExpiry), and associated customer information fetched via backend.getPolicy() and backend.getCustomer()."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create alerts system highlighting policies expiring soon and renewal reminders",
+      "acceptanceCriteria": [
+        "System identifies policies expiring within 30 days",
+        "Visual indicators highlight expiring policies in lists and tables",
+        "Separate alerts view shows all upcoming expirations and renewals",
+        "Road tax expiry dates trigger alerts when approaching"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/alerts/AlertBadge.tsx",
+          "operation": "create",
+          "description": "Create reusable visual indicator component for displaying expiration urgency with color coding (red for urgent, yellow for upcoming). Accept days until expiration as prop to determine styling."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyTable.tsx",
+          "operation": "create",
+          "description": "Create data table component to display all policies fetched via backend.listPolicies(). Integrate AlertBadge component to visually indicate expiring policies based on validTo and roadTaxExpiry dates."
+        },
+        {
+          "path": "frontend/src/pages/Alerts.tsx",
+          "operation": "create",
+          "description": "Create Alerts page that displays alerts fetched via backend.getAlerts() and upcoming expirations from backend.getUpcomingExpirations(30). Show policy expiration alerts, insurance renewal reminders, and road tax expiry alerts in categorized sections with AlertBadge indicators."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build dashboard showing upcoming renewals and expirations with summary metrics",
+      "acceptanceCriteria": [
+        "Dashboard displays count of policies expiring in next 7, 30, and 90 days",
+        "List of upcoming renewals sorted by expiry date",
+        "Quick access links to customers and policies needing attention",
+        "Visual indicators for urgent vs upcoming expirations"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/dashboard/ExpirationMetrics.tsx",
+          "operation": "create",
+          "description": "Create metrics component that fetches data via backend.getUpcomingExpirations() for 7, 30, and 90 day periods. Display counts in a card-based layout with visual distinction between timeframes."
+        },
+        {
+          "path": "frontend/src/components/dashboard/UpcomingRenewalsList.tsx",
+          "operation": "create",
+          "description": "Create list component showing upcoming policy renewals sorted by validTo date. Fetch data via backend.getUpcomingExpirations(90) and include AlertBadge indicators for urgency. Provide quick access links to policy and customer details."
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create Dashboard page that integrates ExpirationMetrics and UpcomingRenewalsList components. Display company branding section with name KRISHNA TECH AND SOLUTIONS, tagline, and contact information from generated logo asset."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Implement navigation menu with Dashboard, Customers, Policies, Alerts, Help, Support, and Legal sections",
+      "acceptanceCriteria": [
+        "Navigation menu is accessible from all pages",
+        "All specified sections are present and functional",
+        "Active section is visually indicated",
+        "Menu is responsive and works on mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Navigation.tsx",
+          "operation": "create",
+          "description": "Create responsive navigation component with links to Dashboard, Customers, Policies, Alerts, Help, Support, and Legal sections. Highlight active route and ensure mobile responsiveness."
+        },
+        {
+          "path": "frontend/src/components/layout/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout wrapper component that includes Navigation component and renders child content. Display company branding (KRISHNA TECH AND SOLUTIONS) in header using generated logo from frontend/public/assets/generated/logo.dim_200x200.png."
+        },
+        {
+          "path": "frontend/src/pages/Help.tsx",
+          "operation": "create",
+          "description": "Create Help page with user guidance and documentation for using the insurance management system."
+        },
+        {
+          "path": "frontend/src/pages/Support.tsx",
+          "operation": "create",
+          "description": "Create Support page displaying company contact information: phone 6290932283 and email krishnatechandsolutions@gmail.com."
+        },
+        {
+          "path": "frontend/src/pages/Legal.tsx",
+          "operation": "create",
+          "description": "Create Legal page with terms of service, privacy policy, and regulatory compliance information relevant to insurance operations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add quick access Add Policy option and company filter to policy list",
+      "acceptanceCriteria": [
+        "Add Policy button or link is prominently accessible in navigation",
+        "Policy list includes filter dropdown for insurance company",
+        "Filter updates policy list to show only selected company's policies"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Navigation.tsx",
+          "operation": "modify",
+          "description": "Add prominent Add Policy button or quick access link in the navigation bar that routes to the Policies page with the form open."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyTable.tsx",
+          "operation": "modify",
+          "description": "Add insurance company filter dropdown above the policy table. Extract unique company names from backend.listPolicies() results and filter table rows based on selected company in real-time."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Implement PDF generation and export for customer and policy reports",
+      "acceptanceCriteria": [
+        "Customer details can be exported to PDF format",
+        "Policy details can be exported to PDF format",
+        "PDF reports include company branding",
+        "Export buttons are accessible from customer and policy detail views"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/pdfGenerator.ts",
+          "operation": "create",
+          "description": "Create utility functions for generating PDF reports using a PDF library. Include functions for customer reports and policy reports, embedding company branding (KRISHNA TECH AND SOLUTIONS, tagline, contact info, and logo from frontend/public/assets/generated/logo.dim_200x200.png)."
+        },
+        {
+          "path": "frontend/src/components/customers/CustomerDetails.tsx",
+          "operation": "create",
+          "description": "Create component to display full customer details fetched via backend.getCustomer(). Include Export to PDF button that calls pdfGenerator utility to create and download customer report."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyDetails.tsx",
+          "operation": "modify",
+          "description": "Add Export to PDF button that calls pdfGenerator utility to create and download policy report including all policy fields and associated customer information."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Apply KRISHNA TECH AND SOLUTIONS branding throughout the application",
+      "acceptanceCriteria": [
+        "Company name appears in header or navigation bar",
+        "Tagline is displayed prominently on main pages",
+        "Contact information is accessible from Support or Help sections",
+        "Branding is consistent across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Layout.tsx",
+          "operation": "modify",
+          "description": "Display company name KRISHNA TECH AND SOLUTIONS in the header alongside the generated logo from frontend/public/assets/generated/logo.dim_200x200.png. Include tagline IRDAI Registered Insurance Partner | Insurance | CA | Legal in a subheader or footer section visible across all pages."
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Prominently display company branding including logo, company name, and tagline in the dashboard hero section."
+        },
+        {
+          "path": "frontend/src/pages/Support.tsx",
+          "operation": "modify",
+          "description": "Ensure contact information (6290932283, krishnatechandsolutions@gmail.com) is prominently displayed with company branding."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Design professional insurance-business interface with clear navigation, data tables, and alert indicators",
+      "acceptanceCriteria": [
+        "Color scheme and typography convey professionalism and trustworthiness suitable for financial services",
+        "Data tables are clean, readable, and include sorting capabilities",
+        "Alert indicators use color coding (red for urgent, yellow for upcoming)",
+        "Layout is organized with clear visual hierarchy and whitespace"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define professional color palette suitable for insurance business with blue and gold tones matching the logo. Set typography to convey trustworthiness. Define alert color variables (red for urgent, yellow for upcoming, green for valid). Ensure sufficient whitespace and clear visual hierarchy in base styles."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with insurance-appropriate colors (blues, golds for branding, red/yellow/green for alerts). Configure professional typography scale and spacing that creates clear visual hierarchy."
+        },
+        {
+          "path": "frontend/src/components/ui/DataTable.tsx",
+          "operation": "create",
+          "description": "Create reusable data table component with clean, readable styling. Include sortable columns, proper spacing, and hover states. Ensure table is responsive and works well on various screen sizes."
+        },
+        {
+          "path": "frontend/src/components/customers/CustomerTable.tsx",
+          "operation": "modify",
+          "description": "Use the DataTable component for displaying customers with consistent professional styling."
+        },
+        {
+          "path": "frontend/src/components/policies/PolicyTable.tsx",
+          "operation": "modify",
+          "description": "Use the DataTable component for displaying policies with consistent professional styling and integrated AlertBadge indicators."
+        }
+      ]
+    }
+  ]
+}
